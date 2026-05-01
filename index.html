@@ -181,8 +181,10 @@
 </head>
 <body class="bg-background text-on-background selection:bg-primary selection:text-on-primary-fixed overflow-x-hidden">
 <div id="scroll-progress"></div>
-<div class="ambient-blob" style="top: 10%; left: -10%;"></div>
-<div class="ambient-blob" style="top: 60%; right: -10%; animation-delay: -10s; background: radial-gradient(circle, rgba(253,144,255,0.08) 0%, rgba(0,0,0,0) 70%);"></div>
+<div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+  <div class="ambient-blob" style="top: 10%; left: -10%;"></div>
+  <div class="ambient-blob" style="top: 60%; right: -10%; animation-delay: -10s; background: radial-gradient(circle, rgba(253,144,255,0.08) 0%, rgba(0,0,0,0) 70%);"></div>
+</div>
 <!-- TopAppBar -->
 <header class="bg-zinc-950/80 backdrop-blur-lg fixed top-0 w-full z-50 border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
 <div class="flex justify-between items-center w-full h-20 px-6 md:px-16 max-w-[1440px] mx-auto">
@@ -327,7 +329,7 @@
 <a href="https://wa.me/917200449522" target="_blank" rel="noopener noreferrer" class="w-full py-4 border border-white/10 rounded-xl font-bold text-white hover:bg-white/5 transition-colors inline-block text-center">Choose Starter</a>
 </div>
 <!-- Business -->
-<div class="glass-card p-10 rounded-xl flex flex-col border-primary/50 bg-primary/5 relative scale-105 shadow-[0_0_60px_rgba(192,193,255,0.1)]">
+<div class="glass-card p-10 rounded-xl flex flex-col border-primary/50 bg-primary/5 relative md:scale-105 shadow-[0_0_60px_rgba(192,193,255,0.1)]">
 <div class="absolute top-0 right-10 -translate-y-1/2 bg-primary text-on-primary-fixed px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Recommended</div>
 <h3 class="font-headline-md text-headline-md text-white mb-2">Business Website</h3>
 <div class="text-4xl font-bold text-primary mb-6">₹9,999<span class="text-body-md font-normal text-on-surface-variant">+</span></div>
@@ -523,7 +525,7 @@
     }
 
     function handleResize() {
-      canvas.width = window.innerWidth;
+      canvas.width = document.documentElement.clientWidth;
       canvas.height = canvas.closest('section').offsetHeight;
       render();
     }
