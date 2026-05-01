@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html class="dark" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "on-error": "#690005",
+                  "surface-container": "#1f1f1f",
+                  "surface": "#131313",
+                  "surface-container-high": "#2a2a2a",
+                  "on-secondary-container": "#fd90ff",
+                  "on-primary-container": "#0d0096",
+                  "secondary-container": "#7f0f89",
+                  "on-tertiary": "#2c313a",
+                  "error-container": "#93000a",
+                  "error": "#ffb4ab",
+                  "background": "#131313",
+                  "primary-fixed-dim": "#c0c1ff",
+                  "surface-container-low": "#1b1b1b",
+                  "surface-container-highest": "#353535",
+                  "secondary-fixed-dim": "#ffa9fd",
+                  "on-tertiary-fixed-variant": "#424751",
+                  "outline-variant": "#464554",
+                  "primary-container": "#8083ff",
+                  "surface-variant": "#353535",
+                  "on-tertiary-container": "#252a33",
+                  "on-tertiary-fixed": "#171c25",
+                  "on-surface-variant": "#c7c4d7",
+                  "surface-container-lowest": "#0e0e0e",
+                  "on-secondary": "#590061",
+                  "tertiary": "#c2c6d3",
+                  "inverse-surface": "#e2e2e2",
+                  "tertiary-container": "#8c919c",
+                  "secondary": "#ffa9fd",
+                  "surface-bright": "#393939",
+                  "on-background": "#e2e2e2",
+                  "primary": "#c0c1ff",
+                  "on-secondary-fixed-variant": "#7c0986",
+                  "tertiary-fixed": "#dee2ef",
+                  "on-surface": "#e2e2e2",
+                  "inverse-primary": "#494bd6",
+                  "primary-fixed": "#e1e0ff",
+                  "on-primary": "#1000a9",
+                  "on-error-container": "#ffdad6",
+                  "on-primary-fixed": "#07006c",
+                  "secondary-fixed": "#ffd6fa",
+                  "outline": "#908fa0",
+                  "tertiary-fixed-dim": "#c2c6d3",
+                  "surface-tint": "#c0c1ff",
+                  "inverse-on-surface": "#303030",
+                  "on-primary-fixed-variant": "#2f2ebe",
+                  "on-secondary-fixed": "#37003c",
+                  "surface-dim": "#131313"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "margin-x": "64px",
+                  "container-max": "1440px",
+                  "base": "8px",
+                  "stack-lg": "80px",
+                  "stack-sm": "16px",
+                  "stack-md": "32px",
+                  "gutter": "24px"
+          },
+          "fontFamily": {
+                  "headline-md": ["Space Grotesk"],
+                  "headline-lg": ["Space Grotesk"],
+                  "display-xl": ["Space Grotesk"],
+                  "body-md": ["Manrope"],
+                  "label-caps": ["Manrope"],
+                  "body-lg": ["Manrope"]
+          },
+          "fontSize": {
+                  "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                  "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                  "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                  "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                  "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                  "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .glass-card {
+      backdrop-filter: blur(20px);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary selection:text-on-primary-fixed overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-zinc-950/80 backdrop-blur-lg fixed top-0 w-full z-50 border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
+<div class="flex justify-between items-center w-full h-20 px-16 max-w-[1440px] mx-auto">
+<div class="text-2xl font-bold text-white tracking-tighter font-['Space_Grotesk']">WEBro</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-indigo-500 dark:text-indigo-400 border-b-2 border-indigo-500 pb-1 font-['Space_Grotesk'] tracking-tight hover:scale-105 transition-transform duration-300" href="#services">Services</a>
+<a class="text-zinc-400 dark:text-zinc-500 hover:text-white transition-colors font-['Space_Grotesk'] tracking-tight hover:scale-105 transition-transform duration-300" href="#work">Work</a>
+<a class="text-zinc-400 dark:text-zinc-500 hover:text-white transition-colors font-['Space_Grotesk'] tracking-tight hover:scale-105 transition-transform duration-300" href="#pricing">Pricing</a>
+<a class="text-zinc-400 dark:text-zinc-500 hover:text-white transition-colors font-['Space_Grotesk'] tracking-tight hover:scale-105 transition-transform duration-300" href="#about">About</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-on-primary-fixed font-['Space_Grotesk'] px-6 py-2 rounded-full font-bold hover:scale-105 transition-transform duration-300 active:scale-95">Start a Project</button>
+<button class="md:hidden text-white hover:scale-105 transition-transform duration-300">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center justify-center px-16 py-stack-lg overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px]"></div>
+</div>
+<div class="relative z-10 max-w-[1440px] w-full text-center">
+<h1 class="font-display-xl text-display-xl text-white mb-stack-sm max-w-5xl mx-auto uppercase">
+          We Build TOGETHER That Work Like <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Machines</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-stack-md">
+          We design and develop modern websites, applications, and systems tailored for growing businesses.</p><div class="mb-stack-md"> 
+        <br/>Simple, Scalable, Effective</div><p class=""></p>
+<div class="flex flex-wrap justify-center gap-gutter">
+<button class="bg-gradient-to-r from-primary to-secondary text-on-primary-fixed px-8 py-4 rounded-xl font-headline-md text-body-md hover:scale-105 hover:shadow-[0_0_30px_rgba(192,193,255,0.3)] transition-all duration-300">
+            Get Started</button>
+<button class="glass-card px-8 py-4 rounded-xl font-headline-md text-body-md text-white flex items-center gap-2 hover:scale-105 transition-all duration-300">
+<span class="material-symbols-outlined">chat</span> Chat on WhatsApp
+          </button>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 w-full h-[300px] bg-gradient-to-t from-background to-transparent z-10"></div>
+</section>
+<!-- Services Section -->
+<section class="px-16 py-stack-lg max-w-[1440px] mx-auto" id="services">
+<div class="mb-stack-md flex justify-between items-end">
+<div>
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-[0.2em] block mb-4">What we do</span>
+<h2 class="font-headline-lg text-headline-lg text-white">Our Core Services</h2>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Service Card 1 -->
+<div class="glass-card p-8 rounded-xl hover:shadow-[0_0_40px_rgba(192,193,255,0.1)] transition-all duration-300 group">
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary" style='font-variation-settings: "FILL" 1;'>code</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-4">Website Development</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Modern, responsive websites designed for usability and performance.</p>
+</div>
+<!-- Service Card 2 -->
+<div class="glass-card p-8 rounded-xl hover:shadow-[0_0_40px_rgba(253,144,255,0.1)] transition-all duration-300 group">
+<div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-secondary" style='font-variation-settings: "FILL" 1;'>apps</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-4">Web Applications</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Complex SaaS platforms and custom dashboards designed with elite user experience in mind.</p>
+</div>
+<!-- Service Card 3 -->
+<div class="glass-card p-8 rounded-xl hover:shadow-[0_0_40px_rgba(192,193,255,0.1)] transition-all duration-300 group">
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary" style='font-variation-settings: "FILL" 1;'>settings_suggest</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-4">Automation Solutions</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Efficient tools to simplify workflows and reduce manual effort and integrated API connections.</p>
+</div>
+<!-- Service Card 4 -->
+<div class="glass-card p-8 rounded-xl hover:shadow-[0_0_40px_rgba(253,144,255,0.1)] transition-all duration-300 group">
+<div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-secondary" style='font-variation-settings: "FILL" 1;'>trending_up</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-4">Digital Marketing</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Full-stack support to grow your online footprint and maintain technical superiority.</p>
+</div>
+</div>
+</section>
+<!-- Portfolio Section -->
+<section class="px-16 py-stack-lg bg-surface-container-lowest" id="work">
+<div class="max-w-[1440px] mx-auto">
+<div class="mb-stack-md">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.2em] block mb-4">Recent Projects</span>
+<h2 class="font-headline-lg text-headline-lg text-white"><br/></h2>
+</div>
+<div class="grid grid-cols-1 gap-stack-md lg:grid-cols-3 md:grid-cols-2">
+<!-- Portfolio 1 -->
+<div class="group relative overflow-hidden rounded-xl">
+<img class="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A clean, high-contrast professional business website displayed on a sleek MacBook Pro set against a dark, minimalist office background. The screen shows vibrant indigo charts and sharp typography that reflects a next-generation technology brand. Subtle purple ambient lighting illuminates the desk area, creating a deep nocturnal mood of elite engineering and technical precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpl9bvb98sNtW9QmMA_dryK2qLqsy4vxt80F98ONLfLzF30L21PhYeIa-ir36gmCdVEdPN_ip7vZG1DhEk9QSsYjtIOZi9P-Xq86hTciecxflC8pcRBDYAuBEcdjqS8UO30KIumHNt9AQuA6G2qVPQZjpp_KITJ3SgCUdOjqIMqrwhR2W7HwKZlog_2PfvlBOCUa7uSEMq9Bs4X32VVbfVfdJiKGRJGGeD3KXVI-r9H9d_PS_Gd8t0ACSJlxzQwVfso1d-6DGiEy27"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+<span class="text-secondary font-label-caps mb-2">RESTAURANT SaaS  APP</span>
+<h4 class="text-white font-headline-md">QR Menu &amp; Self-Ordering Platform</h4>
+</div>
+</div>
+<!-- Portfolio 2 -->
+<div class="group relative overflow-hidden rounded-xl">
+<img class="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An advanced student test portal interface shown on a floating high-resolution digital tablet. The UI features a sophisticated dark mode dashboard with translucent glassmorphic components and glowing magenta progress indicators. The environment is a blurred laboratory setting with soft focus on technological hardware, evoking a sense of modern, high-touch educational software engineering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy2YcKrAnlM1t2tGor4mqG-jISSlsYlZIZQHWPZ6t0cXgXYCD9aGErgu96digg9rUpB7Uf9FtGPLTAjfAdvIJv55qZOF4gjA43oQ0BiR093h6UDA4HN3Ff2XgD96Z5WpFRRMK6yA9Ie-hF0ycCcZKygDzBfk3nxuVooLb1loWD2YBebWOlnRjjdcYPfcmwmmYAsy9OEieTeWT2z0HJDkkm62gNzJPCpas4ji3EeUDtvVnAIFa_9F65WekfqeJXQxPBkTqqqxGi6Z10"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+<span class="text-primary font-label-caps mb-2">Coaching Centre Management SaaS</span>
+<h4 class="text-white font-headline-md">Simplified daily operations and improved tracking for students and staff</h4>
+</div>
+</div>
+<!-- Portfolio 3 -->
+<div class="group relative overflow-hidden rounded-xl">
+<img class="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A minimalist portfolio website for a luxury architect, showcased on a wide-screen monitor within a dimly lit creative studio. The design emphasizes breathable white space, asymmetrical layouts, and sharp indigo accents. The setting is refined and sophisticated, using wide margins and large stack spacing to delineate high-level sections, reinforcing a trust-based and elite aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrcnJ8wu4TNWZFsAyiIK0cWw2wnYRUvSghN-jOoFqFsVy0yUZhX4Y6vEWb3wJ1dK_hatVUpJHDW_GX-qrC-VSB_AXdtH0Taa4_MRqFXQ62kNEEvxkbxDppx6p2cxbEQ9XG9mpWULorgCNj2phRXzgkI5a14ubZx_yIcPYyTtvaZdbdC5hgi8e3wSqZlCUOHu9108TciK1qEul5mD77LySgs85hug6gzIJG_BCnlkgeYy0rxUxmtTrqRxFL7snGUZeTmzF1WhyLxn9y"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+<span class="text-secondary font-label-caps mb-2">Gold Shop SaaS Application</span>
+<h4 class="text-white font-headline-md">Improved accuracy, faster billing, and better customer management</h4>
+</div>
+</div>
+<!-- Portfolio 4 -->
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section class="px-16 pt-stack-lg pb-stack-md max-w-[1440px] mx-auto text-center">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-[0.2em] block mb-4">Investment</span>
+<h2 class="font-headline-lg text-headline-lg text-white mb-6">Transparent Pricing</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+    Flexible and scalable investment plans designed to help your business operate efficiently and grow online.
+  </p>
+</section><section class="px-16 max-w-[1440px] mx-auto pb-stack-lg" id="pricing">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-stack-md">
+<!-- Starter -->
+<div class="glass-card p-10 rounded-xl flex flex-col border-white/5 hover:border-primary/30 transition-all">
+<h3 class="font-headline-md text-headline-md text-white mb-2">Starter Website</h3>
+<div class="text-4xl font-bold text-primary mb-6">₹3,999<span class="text-body-md font-normal text-on-surface-variant">+</span></div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-primary text-sm">check_circle</span>3 Responsive Pages</li>
+<li class="flex items-center gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-primary text-sm">check_circle</span>Mobile Responsive</li>
+<li class="flex items-center gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Basic SEO Setup</li>
+<li class="flex items-center gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> 1 Year Support</li>
+</ul>
+<button class="w-full py-4 border border-white/10 rounded-xl font-bold text-white hover:bg-white/5 transition-colors">Choose Starter</button>
+</div>
+<!-- Business -->
+<div class="glass-card p-10 rounded-xl flex flex-col border-primary/50 bg-primary/5 relative scale-105 shadow-[0_0_60px_rgba(192,193,255,0.1)]">
+<div class="absolute top-0 right-10 -translate-y-1/2 bg-primary text-on-primary-fixed px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Recommended</div>
+<h3 class="font-headline-md text-headline-md text-white mb-2">Business Website</h3>
+<div class="text-4xl font-bold text-primary mb-6">₹9,999<span class="text-body-md font-normal text-on-surface-variant">+</span></div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-primary text-sm">check_circle</span>6 - 10 Responsive Pages</li>
+<li class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Custom CMS Integration</li>
+<li class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Advanced Speed Optimization</li>
+<li class="flex items-center gap-3 text-white"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Payment Gateway</li>
+</ul>
+<button class="w-full py-4 bg-primary text-on-primary-fixed rounded-xl font-bold hover:shadow-[0_0_30px_rgba(192,193,255,0.4)] transition-all">Choose Business</button>
+</div>
+<!-- Web App -->
+<div class="glass-card p-10 rounded-xl flex flex-col border-white/5 hover:border-secondary/30 transition-all">
+<h3 class="font-headline-md text-headline-md text-white mb-2">Web Application</h3>
+<div class="text-4xl font-bold text-secondary mb-6">₹14,999<span class="text-body-md font-normal text-on-surface-variant">+</span></div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-sm">check_circle</span>Admin Panel</li>
+<li class="flex items-center gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-sm">check_circle</span> User Authentication</li>
+<li class="flex items-center gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-sm">check_circle</span> Database Management</li>
+<li class="flex items-center gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-sm">check_circle</span> Priority Infrastructure</li>
+</ul>
+<button class="w-full py-4 border border-white/10 rounded-xl font-bold text-white hover:bg-white/5 transition-colors">Choose Web App</button>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="px-16 py-stack-lg bg-surface-container-low overflow-hidden">
+<div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-stack-lg items-center">
+<div>
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.2em] block mb-4">Success Stories</span>
+<h2 class="font-headline-lg text-headline-lg text-white mb-stack-md">Client Feedback</h2>
+<div class="w-24 h-1 bg-gradient-to-r from-primary to-transparent"></div>
+</div>
+<div class="space-y-stack-md">
+<div class="glass-card p-8 rounded-xl relative">
+<span class="material-symbols-outlined absolute -top-4 -left-4 text-4xl text-primary/30">format_quote</span>
+<p class="font-body-lg text-body-lg text-white mb-6 italic">"Website was clean and delivered on time. Communication was good and everything was explained clearly."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">BO</div>
+<div>
+<div class="font-bold text-white">Business Owner</div>
+<div class="text-xs text-on-surface-variant uppercase tracking-widest">Chennai</div>
+</div>
+</div>
+</div>
+<div class="glass-card p-8 rounded-xl relative ml-12">
+<span class="material-symbols-outlined absolute -top-4 -left-4 text-4xl text-secondary/30">format_quote</span>
+<p class="font-body-lg text-body-lg text-white mb-6 italic">“System is very easy to use. It helped us manage our work without confusion.”</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center font-bold text-secondary">SO</div>
+<div>
+<div class="font-bold text-white">Shop Owner</div>
+<div class="text-xs text-on-surface-variant uppercase tracking-widest">CHENnai</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="px-16 py-stack-lg max-w-[1440px] mx-auto py-24" id="about">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-stack-lg items-center">
+<div>
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-[0.2em] block mb-4">About Us</span>
+<h2 class="font-headline-lg text-headline-lg text-white mb-stack-md mb-8">We Build Simple, Effective Digital Solutions</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-md mb-12"></p><p class="font-body-lg text-body-lg text-on-surface-variant mb-12" data-pm-slice="0 0 []">WEBRO is a modern digital service focused on building clean, functional, and scalable web solutions. We specialize in websites, web applications, and automation tools that are designed to be simple, effective, and easy to use. Our approach is minimal and practical — focusing on what truly matters: performance, usability, and clarity. We work closely with each client to deliver solutions that align with their goals and support their growth.</p><p class=""></p>
+<div class="grid grid-cols-2 gap-x-12 gap-y-8 mb-16 mt-12">
+<div class="flex items-center gap-2 text-white">
+<span class="material-symbols-outlined text-primary">done_all</span>
+<span class="font-body-md">Clean &amp; modern design</span>
+</div>
+<div class="flex items-center gap-2 text-white">
+<span class="material-symbols-outlined text-primary">done_all</span>
+<span class="font-body-md">Affordable pricing</span>
+</div>
+<div class="flex items-center gap-2 text-white">
+<span class="material-symbols-outlined text-primary">done_all</span>
+<span class="font-body-md">Fast delivery</span>
+</div>
+<div class="flex items-center gap-2 text-white">
+<span class="material-symbols-outlined text-primary">done_all</span>
+<span class="font-body-md">Beginner-friendly solutions</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mt-40">
+<div class="glass-card p-8 rounded-xl text-center flex flex-col items-center justify-center">
+<div class="text-4xl font-display-xl text-primary font-bold mb-2">4+</div>
+<div class="font-label-caps text-on-surface-variant uppercase tracking-widest">Projects Completed</div>
+</div>
+<div class="glass-card p-8 rounded-xl text-center flex flex-col items-center justify-center">
+<div class="text-4xl font-display-xl text-secondary font-bold mb-2">6+</div>
+<div class="font-label-caps text-on-surface-variant uppercase tracking-widest">Clients Served</div>
+</div>
+<div class="glass-card p-8 rounded-xl text-center flex flex-col items-center justify-center">
+<div class="text-4xl font-display-xl text-white font-bold mb-2">100%</div>
+<div class="font-label-caps text-on-surface-variant uppercase tracking-widest">Commitment</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="px-16 py-stack-lg relative overflow-hidden">
+<div class="absolute inset-0 bg-primary/5"></div>
+<div class="max-w-[1440px] mx-auto relative z-10 glass-card p-16 rounded-3xl text-center border-primary/20">
+<h2 class="font-display-xl text-headline-lg md:text-display-xl text-white mb-stack-sm uppercase">Let’s Build Something <br/> That Works</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-md max-w-xl mx-auto">Elevate your business with digital engineering that focuses on results, not just aesthetics.</p>
+<button class="bg-primary text-on-primary-fixed px-12 py-5 rounded-full font-bold text-lg hover:scale-110 hover:shadow-[0_0_50px_rgba(192,193,255,0.4)] transition-all duration-300">
+          Book Your Consultation
+        </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-zinc-950 w-full py-20 px-16 border-t border-white/5">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:flex lg:justify-between items-start gap-12 max-w-[1440px] mx-auto">
+<div class="max-w-xs">
+<div class="text-xl font-black text-white mb-6">WEBro</div>
+<p class="text-zinc-500 font-['Space_Grotesk'] text-sm uppercase tracking-widest leading-relaxed">
+          © 2026 Webro. Next-generation digital engineering.
+        </p>
+</div>
+<div class="flex flex-wrap gap-12 md:gap-24 lg:gap-32"><div class="flex flex-col gap-4">
+<span class="text-white font-bold font-['Space_Grotesk'] text-sm uppercase tracking-widest mb-2">Company</span>
+<a class="text-zinc-500 font-['Space_Grotesk'] text-sm uppercase tracking-widest hover:text-indigo-400 transition-colors duration-300" href="#services">Services</a>
+<a class="text-zinc-500 font-['Space_Grotesk'] text-sm uppercase tracking-widest hover:text-indigo-400 transition-colors duration-300" href="#work">Work</a>
+<a class="text-zinc-500 font-['Space_Grotesk'] text-sm uppercase tracking-widest hover:text-indigo-400 transition-colors duration-300" href="#pricing">Pricing</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="text-white font-bold font-['Space_Grotesk'] text-sm uppercase tracking-widest mb-2">Follow Us</span>
+<a class="text-zinc-500 font-['Space_Grotesk'] text-sm uppercase tracking-widest hover:text-indigo-400 transition-colors duration-300" href="#">Instagram</a>
+<a class="text-zinc-500 font-['Space_Grotesk'] text-sm uppercase tracking-widest hover:text-indigo-400 transition-colors duration-300" href="#">Facebook</a>
+<a class="text-zinc-500 font-['Space_Grotesk'] text-sm uppercase tracking-widest hover:text-indigo-400 transition-colors duration-300" href="#">Twitter</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="text-white font-bold font-['Space_Grotesk'] text-sm uppercase tracking-widest mb-2">Contact</span>
+<a class="text-zinc-500 font-['Space_Grotesk'] text-sm uppercase tracking-widest hover:text-indigo-400 transition-colors duration-300" href="tel:+917200449522">+91 7200449522</a>
+<a class="text-zinc-500 font-['Space_Grotesk'] text-sm uppercase tracking-widest hover:text-indigo-400 transition-colors duration-300 break-all" href="mailto:hemanthrajudayakumar@gmail.com">hemanthrajudayakumar@gmail.com</a>
+</div></div>
+</div>
+</footer>
+</body></html>
